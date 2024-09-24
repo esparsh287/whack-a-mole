@@ -1,0 +1,86 @@
+/* Body styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f5;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Score and Time Left styles */
+h2 {
+  font-size: 24px;
+  margin: 10px 0;
+  text-align: center;
+  color: #333;
+}
+
+#score, #time-left {
+  font-size: 36px;
+  color: #ff6347; /* Tomato color for score */
+  font-weight: bold;
+}
+
+/* Grid container styling */
+.grid {
+  width: 606px;
+  height: 606px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  border: solid 2px #333;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Square block styling */
+.square {
+  height: 200px;
+  width: 200px;
+  border: solid 1px #333;
+  background-color: #e0e0e0;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Hover effect for squares that do not contain the mole */
+.square:not(.mole):hover {
+  background-color: #b3b3b3;
+}
+
+/* Mole image styling */
+.mole {
+  background-image: url('images/Whack-a-mole.png');
+  background-size: cover;
+  background-position: center;
+  /* Remove any hover effect for the mole itself */
+  transition: none;
+}
+
+/* Center the entire game */
+body {
+  flex-direction: column;
+  text-align: center;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 650px) {
+  .grid {
+    width: 90%;
+    height: 90vw; /* Responsive square grid */
+  }
+
+  .square {
+    width: calc(33% - 2px); /* Adjust width for mobile layout */
+    height: calc(33vw - 2px);
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  #score, #time-left {
+    font-size: 28px;
+  }
+}
